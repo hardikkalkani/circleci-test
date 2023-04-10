@@ -18,3 +18,4 @@ workflows:
             branches:
               only:
                 - main
+		type: approval
