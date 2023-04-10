@@ -8,14 +8,8 @@ jobs:
     steps:
       - checkout
       - run: ssh -oStrictHostKeyChecking=no -v $USER@$IP "./deploy.sh"
-      - build
       - request-testing:
           type: approval
-          requires:
-            - build
-      - deploy-aws:
-          requires:
-            - request-testing
 # Orchestrate our job run sequence
 workflows:
   version: 2
