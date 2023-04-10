@@ -8,8 +8,6 @@ jobs:
     steps:
       - checkout
       - run: ssh -oStrictHostKeyChecking=no -v $USER@$IP "./deploy.sh"
-      - request-testing:
-          type: approval
 # Orchestrate our job run sequence
 workflows:
   version: 2
