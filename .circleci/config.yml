@@ -10,9 +10,9 @@ jobs:
       - run: ssh -oStrictHostKeyChecking=no -v $USER@$IP "./deploy.sh"
 # Orchestrate our job run sequence
 workflows:
-  build_and_test:
+  build-project:
     jobs:
-      - build
+      - pull-and-build:
       - test:
           requires:
             - build
